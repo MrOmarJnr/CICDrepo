@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
 "scripts": {
-  "test": "echo 'No tests, skipping' && exit 0"
+  "test": "htmlhint index.html"
 }
   },
   "keywords": [],
