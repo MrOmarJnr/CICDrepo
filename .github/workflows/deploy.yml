@@ -13,12 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run HTML Lint Test
+        run: npm test
+
       - name: Deploy to DigitalOcean via SSH
+        if: success() # only run if tests passed
         run: |
           echo "$DO_SSH_KEY" > key.pem
           chmod 600 key.pem
           rsync -avz -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./ $DO_USER@$DO_HOST:/var/www/html/
-        env:
-          DO_SSH_KEY: ${{ secrets.DO_SSH_KEY }}
-          DO_USER: ${{ secrets.DO_USER }}
-          DO_HOST: ${{ secrets.DO_HOST }}
+        
