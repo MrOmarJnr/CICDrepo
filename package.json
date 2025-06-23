@@ -4,9 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-"scripts": {
-  "test": "htmlhint index.html"
-}
+    "scripts": {
+      "test": "htmlhint index.html"
+    }
   },
   "keywords": [],
   "author": "",
