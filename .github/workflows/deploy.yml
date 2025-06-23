@@ -22,4 +22,3 @@ jobs:
           DO_SSH_KEY: ${{ secrets.DO_SSH_KEY }}
           DO_USER: ${{ secrets.DO_USER }}
           DO_HOST: ${{ secrets.DO_HOST }}
-
