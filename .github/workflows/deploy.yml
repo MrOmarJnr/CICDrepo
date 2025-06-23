@@ -1,4 +1,4 @@
-name: Deploy to DigitalOcean and AWS
+name: Deploy to DigitalOcean
 
 on:
   push:
